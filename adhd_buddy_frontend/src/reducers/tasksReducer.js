@@ -6,7 +6,7 @@ const tasksReducer = (state = { tasks: [], hobbies: [], loading: false }, action
         tasks: [...state.tasks],
         loading: true
       }
-    case 'ADD_TASK':
+    case 'GET_TASKS':
       return {
         ...state,
         tasks: action.tasks,

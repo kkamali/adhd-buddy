@@ -1,4 +1,4 @@
-const tasksReducer = (state = { tasks: [], hobbies: [], loading: false }, action) => {
+const tasksReducer = (state = { tasks: [], hobbies: [], habits: [], loading: false }, action) => {
   switch (action.type) {
     case 'LOADING_TASKS':
       return {
@@ -17,4 +17,4 @@ const tasksReducer = (state = { tasks: [], hobbies: [], loading: false }, action
   }
 }
 
-export default tasksReducer;
+export default tasksReducer

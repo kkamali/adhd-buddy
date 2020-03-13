@@ -26,8 +26,8 @@ class App extends Component {
           <NavBar />
           <Route exact path="/" render={(props) => <Home {...props} tasks={this.props.tasks} loading={this.props.loading} deleteTask={this.props.deleteTask} />} />
           <Route exact path="/tasks" render={(props) => <TasksContainer {...props} tasks={this.props.tasks} loading={this.props.loading} addTask={this.props.addTask} deleteTask={this.props.deleteTask} />} />
-          <Route exact path="/hobbies" render={(props) => <HobbiesContainer {...props} hobbies={this.props.hobbies} loading={this.props.loading} />} />
-          <Route exact path="/habits" render={(props) => <HabitsContainer {...props} habits={this.props.habits} loading={this.props.loading} />} />
+          <Route exact path="/hobbies" component={HobbiesContainer} />
+          <Route exact path="/habits" component={HabitsContainer} />
         </div>
       </Router >
     )
@@ -36,10 +36,7 @@ class App extends Component {
 
 const mapStateToProps = state => {
   return {
-    tasks: state.tasks,
-    hobbies: state.hobbies,
-    habits: state.habits,
-    loading: state.loading
+    tasks: state.tasks.list
   }
 }
 

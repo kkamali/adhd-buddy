@@ -1,16 +1,13 @@
-const tasksReducer = (state = { tasks: [], hobbies: [], habits: [], loading: false }, action) => {
+const tasksReducer = (state = { list: [] }, action) => {
   switch (action.type) {
     case 'LOADING_TASKS':
       return {
-        ...state,
-        tasks: [...state.tasks],
-        loading: true
+        ...state
       }
     case 'GET_TASKS':
       return {
         ...state,
-        tasks: action.tasks,
-        loading: false
+        list: action.tasks,
       }
     default:
       return state;

@@ -4,13 +4,21 @@ import './index.css';
 import App from './App';
 
 import { Provider } from 'react-redux'
-import { createStore, applyMiddleware } from 'redux'
+import { createStore, applyMiddleware, combineReducers } from 'redux'
 import thunk from 'redux-thunk'
 import tasksReducer from './reducers/tasksReducer.js'
+import hobbiesReducer from './reducers/hobbiesReducer.js'
+import habitsReducer from './reducers/habitsReducer.js'
 
 import * as serviceWorker from './serviceWorker';
 
-const store = createStore(tasksReducer, applyMiddleware(thunk))
+const rootReducer = combineReducers({
+  tasks: tasksReducer,
+  hobbies: hobbiesReducer,
+  habits: habitsReducer
+})
+
+const store = createStore(rootReducer, applyMiddleware(thunk))
 
 ReactDOM.render(
   <Provider store={store}>

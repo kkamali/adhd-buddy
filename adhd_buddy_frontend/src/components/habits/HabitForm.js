@@ -7,7 +7,9 @@ export default class HabitForm extends Component {
 
   handleSubmit = event => {
     event.preventDefault()
-    this.props.addHabit(this.state)
+    if (this.state.text.length > 0) {
+      this.props.addHabit(this.state)
+    }
     this.setState({
       text: ''
     })

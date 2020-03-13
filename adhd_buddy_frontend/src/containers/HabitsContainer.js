@@ -12,8 +12,8 @@ class HabitsContainer extends Component {
     return (
       <div>
         <h1>What are you working on?</h1>
-        {this.props.habits.map(habit => <Habit key={habit.id} habit={habit} deleteHabit={this.deleteHabit} />)}
-        <HabitForm addHabit={this.addHabit} />
+        {this.props.habits.map(habit => <Habit key={habit.id} habit={habit} deleteHabit={this.props.deleteHabit} />)}
+        <HabitForm addHabit={this.props.addHabit} />
       </div>
     )
   }

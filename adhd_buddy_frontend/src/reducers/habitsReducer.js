@@ -1,16 +1,13 @@
-const habitsReducer = (state = {}, action) => {
+const habitsReducer = (state = { list: [] }, action) => {
   switch (action.type) {
     case 'LOADING_HABITS':
       return {
-        ...state,
-        habits: [...state.habits],
-        loading: true
+        ...state
       }
     case 'GET_HABITS':
       return {
         ...state,
-        habits: action.habits,
-        loading: false
+        list: action.habits,
       }
     default:
       return state;

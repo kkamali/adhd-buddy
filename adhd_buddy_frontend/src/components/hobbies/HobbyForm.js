@@ -8,7 +8,9 @@ export default class HobbyForm extends Component {
 
   handleSubmit = event => {
     event.preventDefault()
-    this.props.addHobby(this.state)
+    if (this.state.text.length > 0) {
+      this.props.addHobby(this.state)
+    }
     this.setState({
       text: '',
       effort: 1

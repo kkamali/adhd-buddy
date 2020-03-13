@@ -12,7 +12,6 @@ export const fetchTasks = () => {
 }
 
 export const addTask = task => {
-  debugger
   let configObject = {
     method: "POST",
     headers: {

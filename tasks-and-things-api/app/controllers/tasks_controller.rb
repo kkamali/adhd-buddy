@@ -6,7 +6,6 @@ class TasksController < ApplicationController
   end
 
   def create
-    binding.pry
     Task.create(name: params[:task][:text], time_sensitive: params[:task][:timeSensitive])
     render json: Task.all
   end

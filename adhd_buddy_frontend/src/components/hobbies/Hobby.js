@@ -1,11 +1,13 @@
 import React from 'react'
+import { Button, Card } from 'react-bootstrap'
 
 export const Hobby = ({ hobby, deleteHobby }) =>
-  <div>
-    {hobby.name}
-    <br />
-    {hobby.effort}
-    <button onClick={() => deleteHobby(hobby.id)}>Delete</button>
-  </div>
+  <Card style={{ width: '10rem' }}>
+    <Card.Body>
+      <Card.Title>{hobby.name}</Card.Title>
+      <Card.Subtitle className='mb-2 text-muted'>{hobby.effort}</Card.Subtitle>
+      <Button onClick={() => deleteHobby(hobby.id)}>Delete</Button>
+    </Card.Body>
+  </Card>
 
 export default Hobby

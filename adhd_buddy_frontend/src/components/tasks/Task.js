@@ -1,9 +1,11 @@
 import React from 'react'
+import { Button, Card } from 'react-bootstrap'
 
 export const Task = ({ task, deleteTask }) =>
-  <div>
-    {task.name}
-    <button onClick={() => deleteTask(task.id)}>Finish</button>
-  </div>
-
+  <Card style={{ width: '10rem' }}>
+    <Card.Body>
+      <Card.Title>{task.name}</Card.Title>
+      <Button onClick={() => deleteTask(task.id)}>Delete</Button>
+    </Card.Body>
+  </Card>
 export default Task

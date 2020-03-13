@@ -28,3 +28,21 @@ export const addTask = task => {
     })
   }
 }
+
+export const deleteTask = id => {
+  let configObject = {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({ id: id })
+  }
+  return (dispatch) => {
+    dispatch({ type: 'LOADING_TASKS' })
+    fetch(`${URL}/${id}`, configObject).then(response => {
+      return response.json()
+    }).then(responseJSON => {
+      dispatch({ type: 'GET_TASKS', tasks: responseJSON })
+    })
+  }
+}

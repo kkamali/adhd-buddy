@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Task from '../components/Task'
+import Task from '../components/tasks/Task'
 
 export default class Home extends Component {
   render() {
@@ -7,7 +7,7 @@ export default class Home extends Component {
       <div className="home">
         <h1>Welcome!</h1>
         <h2>Some things that might need your attention....</h2>
-        {this.props.tasks.map(task => <Task key={task.id} task={task} />)}
+        {this.props.tasks.map(task => <Task key={task.id} task={task} deleteTask={this.props.deleteTask} />)}
       </div>
     )
   }

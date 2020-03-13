@@ -4,7 +4,7 @@ import {
   Route
 } from 'react-router-dom'
 import { connect } from 'react-redux'
-import { fetchTasks, addTask } from './actions/tasks'
+import { fetchTasks, addTask, deleteTask } from './actions/tasks'
 
 import NavBar from './components/NavBar'
 import Home from './containers/Home'
@@ -24,8 +24,8 @@ class App extends Component {
       <Router>
         <div>
           <NavBar />
-          <Route exact path="/" render={(props) => <Home {...props} tasks={this.props.tasks} loading={this.props.loading} />} />
-          <Route exact path="/tasks" render={(props) => <TasksContainer {...props} tasks={this.props.tasks} loading={this.props.loading} addTask={this.props.addTask} />} />
+          <Route exact path="/" render={(props) => <Home {...props} tasks={this.props.tasks} loading={this.props.loading} deleteTask={this.props.deleteTask} />} />
+          <Route exact path="/tasks" render={(props) => <TasksContainer {...props} tasks={this.props.tasks} loading={this.props.loading} addTask={this.props.addTask} deleteTask={this.props.deleteTask} />} />
           <Route exact path="/hobbies" render={(props) => <HobbiesContainer {...props} hobbies={this.props.hobbies} loading={this.props.loading} />} />
           <Route exact path="/habits" render={(props) => <HabitsContainer {...props} habits={this.props.habits} loading={this.props.loading} />} />
         </div>
@@ -43,4 +43,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, { fetchTasks, addTask })(App);
+export default connect(mapStateToProps, { fetchTasks, addTask, deleteTask })(App);

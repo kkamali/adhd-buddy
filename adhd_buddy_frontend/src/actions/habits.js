@@ -42,7 +42,7 @@ export const deleteHabit = id => {
     fetch(`${URL}/${id}`, configObject).then(response => {
       return response.json()
     }).then(responseJSON => {
-      dispatch({ type: 'GET_HABITS', tasks: responseJSON })
+      dispatch({ type: 'GET_HABITS', habits: responseJSON })
     })
   }
 }

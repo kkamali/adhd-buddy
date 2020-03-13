@@ -17,7 +17,7 @@ export default class HobbyForm extends Component {
 
   handleChange = event => {
     this.setState({
-      text: event.target.value
+      [event.target.name]: event.target.value
     })
   }
 

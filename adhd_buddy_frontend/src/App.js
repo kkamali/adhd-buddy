@@ -5,9 +5,8 @@ import {
 } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { fetchTasks, addTask, deleteTask } from './actions/tasks'
-
-import NavBar from './components/NavBar'
 import Home from './containers/Home'
+import Navbar from './components/Navbar'
 import TasksContainer from './containers/TasksContainer'
 import HobbiesContainer from './containers/HobbiesContainer'
 import HabitsContainer from './containers/HabitsContainer'
@@ -23,7 +22,7 @@ class App extends Component {
     return (
       <Router>
         <div>
-          <NavBar />
+          <Navbar />
           <Route exact path="/" render={(props) => <Home {...props} tasks={this.props.tasks} loading={this.props.loading} deleteTask={this.props.deleteTask} />} />
           <Route exact path="/tasks" render={(props) => <TasksContainer {...props} tasks={this.props.tasks} loading={this.props.loading} addTask={this.props.addTask} deleteTask={this.props.deleteTask} />} />
           <Route exact path="/hobbies" component={HobbiesContainer} />

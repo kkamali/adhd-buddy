@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Container, Button, Form } from 'react-bootstrap'
 
 export default class HabitForm extends Component {
   state = {
@@ -23,10 +24,15 @@ export default class HabitForm extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <input type="text" onChange={this.handleChange} value={this.state.text} placeholder="Enter a habit!" name="text" />
-        <input type="submit" value="Submit" />
-      </form>
+      <Container>
+        <Form>
+          <Form.Group>
+            <Form.Label>Habit:</Form.Label>
+            <Form.Control type="text" placeholder="ex: brush teeth, practice French, go running" onChange={this.handleChange} value={this.state.text} name="text" />
+          </Form.Group>
+          <Button variant="primary" type="submit" onClick={this.handleSubmit}>Add</Button>
+        </Form>
+      </Container>
     )
   }
 }

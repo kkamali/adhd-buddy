@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Form, Button, Container } from 'react-bootstrap'
 
 export default class HobbyForm extends Component {
   state = {
@@ -25,12 +26,19 @@ export default class HobbyForm extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <input type="text" onChange={this.handleChange} value={this.state.text} placeholder="Enter a hobby!" name="text" />
-        <label>Effort (from 1-10)</label>
-        <input type="text" onChange={this.handleChange} value={this.state.effort} placeholder="1" name="effort" />
-        <input type="submit" value="Submit" />
-      </form>
+      <Container>
+        <Form>
+          <Form.Group>
+            <Form.Label>Hobby:</Form.Label>
+            <Form.Control type="text" placeholder="ex: painting, playing video games, herding llamas" onChange={this.handleChange} value={this.state.text} name="text" />
+          </Form.Group>
+          <Form.Group>
+            <Form.Label>How much effort does it take? From 1 to 10:</Form.Label>
+            <Form.Control type="text" onChange={this.handleChange} value={this.state.effort} placeholder="1" name="effort" />
+          </Form.Group>
+          <Button variant="primary" type="submit" onClick={this.handleSubmit}>Add</Button>
+        </Form>
+      </Container>
     )
   }
 }

@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Button, Form, Container } from "react-bootstrap"
 
 export default class TaskForm extends Component {
   state = {
@@ -25,12 +26,19 @@ export default class TaskForm extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <input type="text" value={this.state.text} onChange={this.handleChange} name="text" placeholder="Task name" />
-        <input type="checkbox" name="timeSensitive" checked={this.state.timeSensitive} onChange={this.handleChange} />
-        <label for="time_sensitive">Is this time sensitive?</label>
-        <input type="submit" value="Submit" />
-      </form>
+      <Container>
+        <Form>
+          <Form.Group>
+            <Form.Label>Task:</Form.Label>
+            <Form.Control type="text" placeholder="ex: taking dog to groomer, finish assignment" onChange={this.handleChange} value={this.state.text} name="text" />
+          </Form.Group>
+          <Form.Group>
+            <Form.Label>Is this time sensitive?</Form.Label>
+            <Form.Check name="timeSensitive" checked={this.state.timeSensitive} onChange={this.handleChange} />
+          </Form.Group>
+          <Button variant="primary" type="submit" onClick={this.handleSubmit}>Add</Button>
+        </Form>
+      </Container>
     )
   }
 }

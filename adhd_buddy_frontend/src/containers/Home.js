@@ -23,7 +23,7 @@ export default class Home extends Component {
       return (
         <div>
           <h2>Some things that might need your attention....</h2>
-          {this.props.tasks.map(task => <Task key={task.id} task={task} deleteTask={this.props.deleteTask} />)}
+          {this.props.tasks.slice(0, 3).map(task => <Task key={task.id} task={task} deleteTask={this.props.deleteTask} />)}
         </div>
       )
     } else {

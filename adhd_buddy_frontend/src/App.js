@@ -23,8 +23,8 @@ class App extends Component {
       <Router>
         <div>
           <Navbar />
-          <Route exact path="/" render={(props) => <Home {...props} tasks={this.props.tasks} loading={this.props.loading} deleteTask={this.props.deleteTask} />} />
-          <Route exact path="/tasks" render={(props) => <TasksContainer {...props} tasks={this.props.tasks} loading={this.props.loading} addTask={this.props.addTask} deleteTask={this.props.deleteTask} />} />
+          <Route exact path="/" render={(props) => <Home {...props} tasks={this.props.tasks} deleteTask={this.props.deleteTask} addTask={this.props.addTask} />} />
+          <Route exact path="/tasks" render={(props) => <TasksContainer {...props} tasks={this.props.tasks} addTask={this.props.addTask} deleteTask={this.props.deleteTask} />} />
           <Route exact path="/hobbies" component={HobbiesContainer} />
           <Route exact path="/habits" component={HabitsContainer} />
         </div>

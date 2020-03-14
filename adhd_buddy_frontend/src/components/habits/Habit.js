@@ -2,7 +2,7 @@ import React from 'react'
 import { Card, Button } from 'react-bootstrap'
 
 export const Habit = ({ habit, deleteHabit }) =>
-  <Card style={{ width: '10rem' }}>
+  <Card style={{ width: '25%' }}>
     <Card.Body>
       <Card.Title>{habit.name}</Card.Title>
       <Button onClick={() => deleteHabit(habit.id)}>Delete</Button>

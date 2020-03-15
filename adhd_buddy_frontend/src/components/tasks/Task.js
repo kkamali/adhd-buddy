@@ -5,7 +5,7 @@ export const Task = ({ task, deleteTask }) =>
   <Card style={{ width: '25%' }}>
     <Card.Body>
       <Card.Title>{task.name}</Card.Title>
-      <Button onClick={() => deleteTask(task.id)}>Delete</Button>
+      <Button onClick={() => deleteTask(task.id)}>Finish</Button>
     </Card.Body>
   </Card>
 export default Task

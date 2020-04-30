@@ -9,7 +9,9 @@ export default class TaskForm extends Component {
 
   handleSubmit = event => {
     event.preventDefault()
+    console.log('a')
     this.props.addTask(this.state)
+    console.log('f')
     this.setState({
       text: '',
       timeSensitive: false

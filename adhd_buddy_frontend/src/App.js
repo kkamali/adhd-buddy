@@ -12,7 +12,7 @@ import Navbar from './components/Navbar'
 import TasksContainer from './containers/TasksContainer'
 import HobbiesContainer from './containers/HobbiesContainer'
 import HabitsContainer from './containers/HabitsContainer'
-import BuddyContainer from './containers/BuddyContainer'
+import Buddy from './components/Buddy'
 
 import './App.css';
 
@@ -25,7 +25,7 @@ class App extends Component {
 
   renderBuddy() {
     if (this.props.tasks.length > 0) {
-      return <BuddyContainer tasks={this.props.tasks} habits={this.props.habits} hobbies={this.props.hobbies} />
+      return <Buddy tasks={this.props.tasks} habits={this.props.habits} hobbies={this.props.hobbies} />
     }
   }
 
